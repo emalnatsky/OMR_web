@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Elena Malnatsky</title>
+  <meta name="description" content="Elena Malnatsky, PhD candidate at Vrije Universiteit Amsterdam, researching memory in child-robot interaction.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <header class="top">
+    <button class="name" data-tab="about">Elena Malnatsky</button>
+    <nav class="tabs" aria-label="Sections">
+      <button class="tab" data-tab="about">About &amp; contact</button>
+      <button class="tab" data-tab="research">Current research</button>
+      <button class="tab" data-tab="projects">Projects</button>
+      <button class="tab" data-tab="publications">Publications</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ABOUT -->
+    <section class="page" id="about">
+      <div class="two-col">
+        <figure class="pic pic--tall" data-label="pics/about.jpg">
+          <img src="pics/about.jpg" alt="Elena with a social robot" onerror="this.remove()">
+        </figure>
+        <div>
+          <h2>About me</h2>
+          <p>
+            I'm a PhD candidate in Artificial Intelligence at the Faculty of Science,
+            Vrije Universiteit Amsterdam, and a member of the Network Institute.
+          </p>
+          <p>
+            My research is about long-term child-robot interaction. I look at how robots can
+            personalise conversations, feel relatable to children, and remember things about
+            them in a way that is open and fair.
+          </p>
+          <div class="about-contact">
+            <p class="about-contact__label">Contact</p>
+            <div class="about-contact__row">
+              <a class="about-contact__email" href="mailto:lenasheinman@gmail.com">lenasheinman@gmail.com</a>
+              <button class="btn btn--light btn--sm" id="copy-email" data-email="lenasheinman@gmail.com">Copy</button>
+            </div>
+            <ul class="about-contact__links">
+              <li><a href="https://research.vu.nl/en/persons/elena-malnatsky/" target="_blank" rel="noopener">VU research profile</a></li>
+              <li><a href="https://orcid.org/0009-0008-4822-2944" target="_blank" rel="noopener">ORCID</a></li>
+              <li><a href="https://www.linkedin.com/search/results/people/?keywords=Lena%20(Elena)%20Malnatsky" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRENT RESEARCH -->
+    <section class="page" id="research">
+      <div class="research">
+        <div class="research__text">
+          <h2>Current research</h2>
+          <p>
+            Social robots that personalise conversations store information about the children
+            they talk to. But children rarely get to see that information, let alone change it.
+            In my current project, we open up the robot's memory to them.
+          </p>
+          <p>
+            First, children helped us design how this should work. Then 71 children aged 10–12
+            talked one-on-one with a NAO robot about school life and their dreams for the future.
+            At any moment they could ask what the robot remembered about them and change it in
+            their own words. Some of them also had a Memory Book on a tablet that showed what the
+            robot knew.
+          </p>
+          <p>
+            To see how children react when the robot gets them wrong, it made a few deliberate
+            mistakes, like saying their favourite food was broccoli.
+          </p>
+          <div class="card">
+            <p class="small-title">What I'm asking</p>
+            <ul class="list">
+              <li>How do children understand what a robot remembers about them?</li>
+              <li>How do they respond when it gets something about them wrong?</li>
+              <li>When they try to change its memory, does the robot actually pick it up?</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="gallery">
+          <figure class="gallery__main">
+            <img id="gallery-img" src="pics/web/study-girl.jpg" alt="">
+          </figure>
+          <div class="gallery__bar">
+            <button class="btn btn--light btn--sm" id="gallery-prev" aria-label="Previous photo">←</button>
+            <p class="gallery__caption" id="gallery-caption"></p>
+            <button class="btn btn--light btn--sm" id="gallery-next" aria-label="Next photo">→</button>
+          </div>
+          <div class="gallery__thumbs">
+            <button class="thumb is-on" data-src="pics/web/study-girl.jpg" data-caption="A child talking with the robot during the study"><img src="pics/web/study-girl.jpg" alt="Child talking with the robot"></button>
+            <button class="thumb" data-src="pics/web/study-tablet.jpg" data-caption="Looking through the Memory Book on a tablet next to the robot"><img src="pics/web/study-tablet.jpg" alt="Child using the Memory Book tablet"></button>
+            <button class="thumb" data-src="pics/web/codesign-session.jpg" data-caption="Co-design session: children drawing what the robot's memory could look like"><img src="pics/web/codesign-session.jpg" alt="Children in a co-design session"></button>
+            <button class="thumb" data-src="pics/web/memorybook-cover.jpg" data-caption="The co-designed Memory Book"><img src="pics/web/memorybook-cover.jpg" alt="Memory Book cover"></button>
+            <button class="thumb" data-src="pics/web/memorybook-chapters.jpg" data-caption="Memory Book chapters: hobbies, sport, music, books, friends, animals, food, school and dreams"><img src="pics/web/memorybook-chapters.jpg" alt="Memory Book table of contents"></button>
+            <button class="thumb" data-src="pics/web/memorybook-page.jpg" data-caption="A chapter showing what the robot remembers about a child"><img src="pics/web/memorybook-page.jpg" alt="Memory Book chapter page"></button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="page" id="projects">
+      <div class="wide">
+        <div class="row-between">
+          <h2>Projects</h2>
+          <div class="carousel__controls">
+            <button class="btn btn--light btn--sm" id="proj-prev" aria-label="Previous project">←</button>
+            <span class="carousel__count" id="proj-count">1 / 4</span>
+            <button class="btn btn--light btn--sm" id="proj-next" aria-label="Next project">→</button>
+          </div>
+        </div>
+
+        <div class="carousel" id="proj-track">
+          <article class="project" data-project="omr">
+            <figure class="pic" data-label="pics/omr.jpg">
+              <img src="pics/omr.jpg" alt="" onerror="this.remove()">
+            </figure>
+            <div>
+              <p class="project__venue">HRI 2026</p>
+              <h3>Making Memories Together</h3>
+              <p class="project__sub">Why robot memory needs to be open to children</p>
+              <p>A year after a reading study, we returned to 50 children: they felt less close to the robot, and half of what it remembered about them was outdated or missing. A short online check-in repaired both, which led us to propose robots whose memory children can see and help build.</p>
+              <div class="buttons">
+                <a class="btn" href="https://doi.org/10.1145/3776734.3794570" target="_blank" rel="noopener">Read the paper</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" data-project="codesign">
+            <figure class="pic" data-label="pics/web/memorybook-cover.jpg">
+              <img src="pics/web/memorybook-cover.jpg" alt="The co-designed Memory Book" onerror="this.remove()">
+            </figure>
+            <div>
+              <p class="project__venue">Current project</p>
+              <h3>Open Robot Memory</h3>
+              <p class="project__sub">Letting children see and change what a robot remembers</p>
+              <p>Together with children, we co-designed a Memory Book and ways for a robot to talk about what it remembers. Then 71 children aged 10–12 talked with the robot and could ask about and correct what it knew about them, including a few deliberate mistakes.</p>
+              <div class="buttons">
+                <button class="btn" data-tab="research">See current research</button>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" data-project="bookworm">
+            <figure class="pic" data-label="pics/bookworm.jpg">
+              <img src="pics/bookworm.jpg" alt="" onerror="this.remove()">
+            </figure>
+            <div>
+              <p class="project__venue">HRI 2026 · AIED 2026</p>
+              <h3>The Robot Bookworm</h3>
+              <p class="project__sub">Personalised book talks with a social robot</p>
+              <p>A social robot that discusses books with children to support their reading motivation. Its conversations are generated with language models through a hybrid human–AI approach that keeps the content safe and personal.</p>
+              <div class="buttons">
+                <a class="btn" href="https://research.vu.nl/en/publications/the-robot-bookworm-fostering-childrens-reading-motivation-through/" target="_blank" rel="noopener">Read the paper</a>
+                <a class="btn btn--light" href="https://doi.org/10.1007/978-3-032-29760-0_25" target="_blank" rel="noopener">AIED paper</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" data-project="humor">
+            <figure class="pic" data-label="pics/humor.jpg">
+              <img src="pics/humor.jpg" alt="" onerror="this.remove()">
+            </figure>
+            <div>
+              <p class="project__venue">HRI 2025</p>
+              <h3>Fitting Humor</h3>
+              <p class="project__sub">Robot humour that fits a child's age</p>
+              <p>Co-design workshops with 102 children aged 8–12 identified the humour that suits each age group. In a follow-up study, children found the robot funnier and more relatable when its humour matched their age.</p>
+              <div class="buttons">
+                <a class="btn" href="https://research.vu.nl/en/publications/fitting-humor-age-based-persaonalization-for-shaping-relatable-ch/" target="_blank" rel="noopener">Read the paper</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="carousel__dots" id="proj-dots"></div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="page" id="publications">
+      <div class="wide">
+        <div class="row-between">
+          <h2>Publications</h2>
+          <div class="filters">
+            <button class="pill is-on" data-year="all">All</button>
+            <button class="pill" data-year="2026">2026</button>
+            <button class="pill" data-year="2025">2025</button>
+            <button class="pill" data-year="2024">2024</button>
+          </div>
+        </div>
+
+        <ul class="pubs">
+          <li data-year="2026">
+            <div>
+              <p class="pub-title">Making Memories Together: Toward Transparent and Co-constructed Robot Memory in Child-Robot Interaction</p>
+              <p class="muted"><b>E. Malnatsky</b>, S. Wang, K. Hindriks, M. E. U. Ligthart · HRI '26 Companion</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://doi.org/10.1145/3776734.3794570" target="_blank" rel="noopener">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="Malnatsky, E., Wang, S., Hindriks, K., &amp; Ligthart, M. E. U. (2026). Making Memories Together: Toward Transparent and Co-constructed Robot Memory in Child-Robot Interaction. In HRI '26 Companion (pp. 1125–1129). ACM. https://doi.org/10.1145/3776734.3794570">Cite</button>
+            </div>
+          </li>
+          <li data-year="2026">
+            <div>
+              <p class="pub-title">The Robot Bookworm: Fostering Children's Reading Motivation through Personalized Book Discussions</p>
+              <p class="muted"><b>E. Malnatsky</b>, S. Ul Husan, K. Sinha, S. Veld, R. Van Nee, D. Wijnhorst, S. Wang, K. Hindriks, M. E. U. Ligthart · HRI '26</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://research.vu.nl/en/publications/the-robot-bookworm-fostering-childrens-reading-motivation-through/" target="_blank" rel="noopener">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="Malnatsky, E., Ul Husan, S., Sinha, K., Veld, S., Van Nee, R., Wijnhorst, D., Wang, S., Hindriks, K., &amp; Ligthart, M. E. U. (2026). The Robot Bookworm: Fostering Children's Reading Motivation through Personalized Book Discussions. In HRI '26 (pp. 1010–1019). ACM.">Cite</button>
+            </div>
+          </li>
+          <li data-year="2026">
+            <div>
+              <p class="pub-title">A Hybrid Human-AI Content Generation Framework for Safe and Personalized Dialogic Learning with Children</p>
+              <p class="muted"><b>E. Malnatsky</b>, S. Wang, K. Sinha, K. V. Hindriks, M. E. U. Ligthart · AIED 2026</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://doi.org/10.1007/978-3-032-29760-0_25" target="_blank" rel="noopener">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="Malnatsky, E., Wang, S., Sinha, K., Hindriks, K. V., &amp; Ligthart, M. E. U. (2026). A Hybrid Human-AI Content Generation Framework for Safe and Personalized Dialogic Learning with Children. In AIED 2026, LNAI (pp. 226–235). Springer. https://doi.org/10.1007/978-3-032-29760-0_25">Cite</button>
+            </div>
+          </li>
+          <li data-year="2025">
+            <div>
+              <p class="pub-title">Fitting Humor: Age-Based Personalization for Shaping Relatable Child-Robot Interactions</p>
+              <p class="muted"><b>E. Malnatsky</b>, M. E. U. Ligthart · HRI '25</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://research.vu.nl/en/publications/fitting-humor-age-based-persaonalization-for-shaping-relatable-ch/" target="_blank" rel="noopener">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="Malnatsky, E., &amp; Ligthart, M. E. U. (2025). Fitting Humor: Age-Based Personalization for Shaping Relatable Child-Robot Interactions. In HRI '25 (pp. 331–341). ACM.">Cite</button>
+            </div>
+          </li>
+          <li data-year="2025">
+            <div>
+              <p class="pub-title">Dialogic Learning in Child-Robot Interaction: A Hybrid Approach to Personalized Educational Content Generation</p>
+              <p class="muted"><b>E. Malnatsky</b>, S. Wang, K. V. Hindriks, M. E. U. Ligthart · AAAI Spring Symposium 2025</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://research.vu.nl/en/publications/dialogic-learning-in-child-robot-interaction-a-hybrid-approach-to/" target="_blank" rel="noopener">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="Malnatsky, E., Wang, S., Hindriks, K. V., &amp; Ligthart, M. E. U. (2025). Dialogic Learning in Child-Robot Interaction: A Hybrid Approach to Personalized Educational Content Generation. In Proceedings of the 2025 AAAI Spring Symposium Series (Vol. 5, No. 1, pp. 416–420). AAAI.">Cite</button>
+            </div>
+          </li>
+          <li data-year="2024">
+            <div>
+              <p class="pub-title">Shaping Relatable Robots: A Child-Centered Approach to Social Personalization</p>
+              <p class="muted"><b>E. Malnatsky</b>, S. Wang, K. Hindriks, M. Ligthart · HRI '24 Companion</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://doi.org/10.1145/3610978.3638374" target="_blank" rel="noopener">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="Malnatsky, E., Wang, S., Hindriks, K., &amp; Ligthart, M. (2024). Shaping Relatable Robots: A Child-Centered Approach to Social Personalization. In HRI '24 Companion (pp. 127–129). ACM. https://doi.org/10.1145/3610978.3638374">Cite</button>
+            </div>
+          </li>
+        </ul>
+        <div class="buttons">
+          <a class="btn btn--light" href="https://research.vu.nl/en/persons/elena-malnatsky/" target="_blank" rel="noopener">See all on VU research portal</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
