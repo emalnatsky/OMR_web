@@ -296,3 +296,32 @@ h1, h2 { color: var(--text); }
 .about-contact__links { list-style: none; margin: 12px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 6px 24px; font-size: 15px; }
 .about-contact__links a { color: var(--blue-dark); text-decoration: none; }
 .about-contact__links a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+/* About: longer bio text */
+#about .two-col { max-width: 1050px; align-items: start; }
+.about-text p { font-size: 15px; margin-bottom: 10px; }
+.about-list { margin: 0 0 10px; padding-left: 18px; font-size: 15px; }
+.about-list li { margin-bottom: 8px; }
+.about-list li::marker { color: var(--purple); }
+.about-list b { color: var(--purple-dark); font-weight: 700; }
+#about .about-contact { margin-top: 20px; padding-top: 16px; }
+
+/* About: work + personal email rows */
+.about-contact__row + .about-contact__row { margin-top: 6px; }
+.about-contact__type { font-size: 13px; color: var(--muted); min-width: 64px; }
+.about-contact__email { font-size: 16px; }
+
+/* Current research: collaboration credit */
+.research .credit {
+  grid-column: 1 / -1; margin-top: 4px; padding-top: 14px;
+  border-top: 1px solid var(--border); color: var(--text);
+}
+.research .credit p { font-size: 14px; margin-bottom: 8px; }
+.team { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: 14px; line-height: 1.5; }
+.team__prog { color: var(--muted); font-size: 13px; }
+.h2-sub { display: block; font-size: 18px; font-weight: 500; color: var(--blue); margin-top: 4px; }
+@media (max-width: 900px) { .team { grid-template-columns: 1fr; } }
+
+/* Long pages: centre when it fits, otherwise start at the top and scroll */
+.page { align-items: flex-start; padding-bottom: 48px; }
+.page > * { margin-top: auto; margin-bottom: auto; }

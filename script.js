@@ -58,8 +58,9 @@ async function copy(text, msg) {
 document.querySelectorAll('.cite').forEach(b =>
   b.addEventListener('click', () => copy(b.dataset.cite, 'Citation copied'))
 );
-const copyEmail = document.getElementById('copy-email');
-copyEmail.addEventListener('click', () => copy(copyEmail.dataset.email, 'Email copied'));
+document.querySelectorAll('.copy-email').forEach(b =>
+  b.addEventListener('click', () => copy(b.dataset.email, 'Email copied'))
+);
 
 showPage(location.hash.slice(1) || 'about');
 
