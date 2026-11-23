@@ -237,7 +237,7 @@
     @media (max-width: 760px) {
       #reconnect .reconnect-photo-grid { grid-template-columns: 1fr; }
     }
-    /* Make URLs such as #research and #reconnect open their proper page. */
+    /* Make URLs such as #open_memory and #reconnect open their proper page. */
     body[data-selected-tab] main > section.page { display: none !important; }
     body[data-selected-tab="about"] main > #about,
     body[data-selected-tab="research"] main > #research,
@@ -814,7 +814,7 @@
                 keep its knowledge of them up to date.
               </li>
               <li>
-                <b>Responsible and child-centred AI:</b> In <a href="#research">Open Robot Memory</a>,
+                <b>Responsible and child-centred AI:</b> In <a href="#open_memory">Open Robot Memory</a>,
                 a project I initiated and led, we designed ways for children to inspect, question
                 and change what a robot remembers about them.
               </li>
@@ -1113,7 +1113,7 @@
             Beyond exploring how to reconnect with a familiar robot, the study revealed the
             importance of keeping a robot's knowledge up to date and allowing children to
             influence what it remembers. These questions helped motivate the next step in
-            my research: <a href="#research">Open Robot Memory</a>.
+            my research: <a href="#open_memory">Open Robot Memory</a>.
           </p>
           <p>
             The study also supported two excellent BSc thesis projects. We are working on
@@ -1346,7 +1346,7 @@
               <p class="project__sub">Letting children see and change what a robot remembers</p>
               <p>Together with children, we co-designed a Memory Book and ways for a robot to talk about what it remembers. Then 71 children aged 10–12 talked with the robot and could ask about and correct what it knew about them, including a few deliberate mistakes.</p>
               <div class="buttons">
-                <a class="btn" href="#research">View Open Robot Memory</a>
+                <a class="btn" href="#open_memory">View Open Robot Memory</a>
               </div>
             </div>
           </article>
@@ -1531,12 +1531,19 @@
 
   <div class="toast" id="toast" role="status" aria-live="polite"></div>
 
+  <!-- The existing navigation script rewrites unknown hashes on load;
+       retain the requested public hash for the page-specific router below. -->
+  <script>window.__initialPageHash = location.hash;</script>
   <script src="script.js"></script>
 
   <script>
-    /* Shareable project pages: /#research, /#reconnect, /#bookworm, /#humor. */
+    /* Shareable project pages: /#open_memory, /#reconnect, /#bookworm, /#humor.
+       Keep #research as a backwards-compatible alias; the internal page id stays "research"
+       to preserve existing CSS and script.js behavior. */
     (() => {
       const pages = new Set(['about','research','reconnect','bookworm','humor','projects','publications']);
+      let firstHashRead = window.__initialPageHash;
+      const publicHashFor = id => id === 'research' ? 'open_memory' : id;
       function showPage(id, writeHash) {
         if (!pages.has(id)) return;
         document.body.dataset.selectedTab = id;
@@ -1553,13 +1560,20 @@
           tab.classList.toggle('active', selected);
           tab.setAttribute('aria-current', selected ? 'page' : 'false');
         });
-        if (writeHash && location.hash !== '#' + id) {
-          history.pushState(null, '', '#' + id);
+        const targetHash = '#' + publicHashFor(id);
+        if (writeHash && location.hash !== targetHash) {
+          history.pushState(null, '', targetHash);
         }
       }
       function readHash() {
-        const key = decodeURIComponent(location.hash.substring(1));
-        showPage(pages.has(key) ? key : 'about', false);
+        const rawHash = firstHashRead || location.hash;
+        firstHashRead = '';
+        const key = decodeURIComponent(rawHash.substring(1));
+        const id = key === 'open_memory' ? 'research' : key;
+        showPage(pages.has(id) ? id : 'about', false);
+        if (id === 'research' && location.hash !== '#open_memory') {
+          history.replaceState(null, '', '#open_memory');
+        }
       }
       document.addEventListener('click', event => {
         const target = event.target.closest('[data-tab]');
