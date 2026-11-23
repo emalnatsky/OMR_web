@@ -1,0 +1,1579 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Lena (Elena) Malnatsky</title>
+  <meta name="description" content="Elena Malnatsky, PhD candidate at Vrije Universiteit Amsterdam, researching memory in child-robot interaction.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <!-- Open Robot Memory: top-of-page image layout (scoped to this page). -->
+  <style>
+    #research .research {
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: stretch !important;
+      width: min(100%, 1120px);
+      max-width: 1120px;
+      margin: 0 auto;
+      gap: 24px;
+    }
+    #research .orm-introduction {
+      width: min(100%, 850px);
+    }
+    /* Dated project update: visible at the very top of Open Robot Memory. */
+    #research .orm-update {
+      max-width: 850px;
+      padding: 17px 21px;
+      border-radius: 12px;
+      border-left: 4px solid #5875c6;
+      background: #eef3fb;
+      color: #292b40;
+      box-sizing: border-box;
+    }
+    #research .orm-update p { margin: 0; line-height: 1.55; }
+    #research .orm-update__date {
+      display: block;
+      margin-bottom: 7px;
+      color: #415b99;
+      font-size: .8rem;
+      font-weight: 700;
+      letter-spacing: .02em;
+    }
+    #research .orm-introduction h2 { margin-bottom: 6px; }
+    #research .orm-introduction p:last-child { margin-bottom: 0; }
+
+    #research .orm-team-photo,
+    #research .orm-photo-card {
+      margin: 0;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid rgba(48, 43, 86, .10);
+      background: rgba(255, 255, 255, .75);
+    }
+    #research .orm-team-photo[hidden] { display: none !important; }
+    #research .orm-team-photo img {
+      display: block;
+      width: 100%;
+      height: clamp(220px, 28vw, 360px);
+      object-fit: cover;
+      object-position: center;
+    }
+    #research .orm-team-photo figcaption,
+    #research .orm-photo-card figcaption {
+      font-size: .86rem;
+      color: #56536c;
+      padding: 12px 14px;
+      line-height: 1.4;
+    }
+    #research .orm-team-photo figcaption {
+      font-weight: 600;
+    }
+    /* Main team image on the left; three study images in a compact mosaic. */
+    #research .orm-featured-gallery {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 16px;
+      width: 100%;
+      align-items: stretch;
+    }
+    #research .orm-photo-card {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+    #research .orm-photo-card img {
+      display: block;
+      width: 100%;
+      min-height: 0;
+      object-fit: cover;
+      object-position: center;
+    }
+    /* Keep the full team visible, including the tablet in the foreground. */
+    #research .orm-photo-card--hero img {
+      aspect-ratio: 4 / 3;
+      object-fit: contain;
+      background: #e7e3dc;
+    }
+    #research .orm-gallery-side {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 16px;
+      min-width: 0;
+      min-height: 0;
+    }
+    #research .orm-gallery-side .orm-photo-card:first-child {
+      grid-column: 1 / -1;
+    }
+    #research .orm-gallery-side .orm-photo-card img {
+      flex: 1 1 0;
+      height: 0;
+    }
+    #research .orm-photo-card figcaption {
+      flex: 0 0 auto;
+    }
+    #research .orm-more-photos {
+      margin: 0;
+      width: 100%;
+    }
+    #research .orm-more-photos summary {
+      display: inline-flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      cursor: pointer;
+      color: #3f66d7;
+      font-size: .92rem;
+      font-weight: 700;
+      padding: 9px 0;
+    }
+    #research .orm-more-photos summary:hover { text-decoration: underline; }
+    #research .orm-photo-count {
+      font-size: .76rem;
+      font-weight: 500;
+      color: #67647b;
+    }
+    #research .orm-more-photos .gallery {
+      display: block !important;
+      position: static !important;
+      width: min(100%, 780px);
+      max-width: 100%;
+      margin: 18px 0 0;
+      align-self: flex-start;
+      transform: none !important;
+    }
+    #research .orm-more-photos .gallery__main img {
+      display: block;
+      width: 100%;
+      max-height: 470px;
+      object-fit: contain;
+    }
+    #research .research__text {
+      width: min(100%, 840px);
+      max-width: 840px !important;
+      align-self: flex-start !important;
+      margin-top: 8px;
+    }
+    #research .research__text h3 { margin-top: 1.65em; }
+    #research .credit {
+      position: static !important;
+      width: min(100%, 950px);
+      max-width: 950px !important;
+      align-self: flex-start !important;
+    }
+    @media (max-width: 760px) {
+      #research .research { gap: 18px; }
+      #research .orm-featured-gallery { grid-template-columns: 1fr; gap: 12px; }
+      #research .orm-gallery-side { grid-template-columns: repeat(3, minmax(0, 1fr)); grid-template-rows: auto; gap: 10px; }
+      #research .orm-gallery-side .orm-photo-card:first-child { grid-column: auto; }
+      #research .orm-gallery-side .orm-photo-card img { height: auto; flex: none; aspect-ratio: 4 / 3; }
+      #research .orm-gallery-side .orm-photo-card figcaption { padding: 8px; font-size: .74rem; }
+      #research .orm-team-photo img { height: 230px; }
+    }
+
+    /* Robot Reconnect: two photos, no additional gallery. */
+    #reconnect .reconnect-page {
+      display: flex; flex-direction: column; gap: 24px;
+      max-width: 1120px; margin: 0 auto;
+    }
+    #reconnect .reconnect-intro, #reconnect .reconnect-story {
+      width: min(100%, 850px);
+    }
+    #reconnect .reconnect-intro h2 { margin-bottom: 8px; }
+    #reconnect .reconnect-photo-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      align-items: stretch;
+    }
+    #reconnect .reconnect-photo {
+      margin: 0;
+      min-width: 0;
+      overflow: hidden;
+      border-radius: 15px;
+      border: 1px solid rgba(48,43,86,.12);
+      background: rgba(255,255,255,.86);
+    }
+    #reconnect .reconnect-photo__frame {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      aspect-ratio: 4 / 3;
+      background: #eaeaf1;
+      overflow: hidden;
+    }
+    #reconnect .reconnect-photo__frame img {
+      width: 100%; height: 100%;
+      display: block; object-fit: cover;
+    }
+    /* The study banner is much wider than the team portrait. Keep the full
+       graphic visible, including its title and the letter/chat examples. */
+    #reconnect .reconnect-photo--study .reconnect-photo__frame {
+      background: #fff;
+    }
+    #reconnect .reconnect-photo--study .reconnect-photo__frame img {
+      object-fit: contain !important;
+      object-position: center center;
+      max-width: 100%;
+      max-height: 100%;
+    }
+    #reconnect .reconnect-photo__frame img[hidden] { display: none; }
+    #reconnect .reconnect-photo__placeholder {
+      padding: 20px;
+      color: #77738c;
+      text-align: center;
+      font-size: .9rem;
+    }
+    #reconnect .reconnect-photo figcaption {
+      padding: 11px 14px;
+      font-size: .87rem;
+      line-height: 1.45;
+      color: #59556e;
+    }
+    #reconnect .reconnect-credits { max-width: 100%; width: 100%; }
+    @media (max-width: 760px) {
+      #reconnect .reconnect-photo-grid { grid-template-columns: 1fr; }
+    }
+    /* Make URLs such as #research and #reconnect open their proper page. */
+    body[data-selected-tab] main > section.page { display: none !important; }
+    body[data-selected-tab="about"] main > #about,
+    body[data-selected-tab="research"] main > #research,
+    body[data-selected-tab="reconnect"] main > #reconnect,
+    body[data-selected-tab="bookworm"] main > #bookworm,
+    body[data-selected-tab="humor"] main > #humor,
+    body[data-selected-tab="projects"] main > #projects,
+    body[data-selected-tab="publications"] main > #publications {
+      display: block !important; opacity: 1 !important;
+      visibility: visible !important; pointer-events: auto !important;
+      transform: none !important;
+    }
+
+    /* Separate project pages: Bookworm and Humor */
+    #bookworm .feature-page, #humor .feature-page {
+      display: flex; flex-direction: column; gap: 24px;
+      max-width: 1120px; width: 100%; margin: 0 auto;
+    }
+    #bookworm .feature-intro, #humor .feature-intro,
+    #bookworm .feature-story, #humor .feature-story {
+      width: min(100%, 850px);
+    }
+    #bookworm .feature-intro h2, #humor .feature-intro h2 { margin-bottom: 8px; }
+    #bookworm .feature-hero, #humor .feature-hero {
+      margin: 0; padding: 16px; border-radius: 16px;
+      background: rgba(255,255,255,.88); border: 1px solid rgba(48,43,86,.12);
+      max-width: 940px; width: 100%; box-sizing: border-box;
+    }
+    #bookworm .feature-hero img, #humor .feature-hero img {
+      display: block; width: 100%; height: auto;
+      max-height: 580px; object-fit: contain;
+      border-radius: 10px;
+    }
+    #bookworm .feature-hero figcaption, #humor .feature-hero figcaption {
+      padding: 12px 2px 0; font-size: .88rem; color: #57536a;
+    }
+    #bookworm .feature-meta, #humor .feature-meta {
+      display: flex; flex-wrap: wrap; gap: 10px; align-items: center;
+    }
+    #bookworm .feature-meta span, #humor .feature-meta span {
+      display: inline-block; padding: 7px 12px; font-size: .82rem;
+      border-radius: 999px; color: #39457f;
+      background: rgba(72,104,205,.09);
+    }
+    #bookworm .feature-actions, #humor .feature-actions {
+      display: flex; flex-wrap: wrap; gap: 12px;
+    }
+    /* Navigation fix: keep the entire area of every tab clickable.
+       The old horizontally scrolling .tabs container clipped the hit area. */
+    header.top {
+      position: sticky !important;
+      top: 0;
+      z-index: 10000 !important;
+      isolation: isolate;
+      display: flex !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      gap: 10px 16px;
+      overflow: visible !important;
+    }
+    header.top > .name {
+      position: relative;
+      z-index: 1;
+      flex: 0 0 auto;
+    }
+    header.top > nav.tabs {
+      display: flex !important;
+      flex: 1 1 650px;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      justify-content: flex-start;
+      gap: 6px;
+      max-width: 100%;
+      min-height: 44px;
+      overflow: visible !important;
+      position: relative;
+      z-index: 2;
+    }
+    header.top > nav.tabs > button.tab {
+      position: relative;
+      z-index: 3;
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      min-height: 44px;
+      padding: 10px 13px;
+      box-sizing: border-box;
+      white-space: nowrap;
+      cursor: pointer;
+      pointer-events: auto !important;
+    }
+    @media (max-width: 840px) {
+      header.top > nav.tabs {
+        flex: 1 1 100%;
+        justify-content: flex-start;
+      }
+    }
+
+    /* Show the entire humor infographic in its carousel thumbnail. */
+    #projects .project[data-project="humor"] .pic img {
+      object-fit: contain !important;
+      object-position: center !important;
+      background: #eaf3fb;
+    }
+
+    /* Prevent project thumbnails from being cut off or overflowing. */
+    #projects .project,
+    #projects .project > .pic,
+    #projects .project > div {
+      min-width: 0;
+    }
+    #projects .project > .pic {
+      box-sizing: border-box;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    #projects .project > .pic > img {
+      display: block;
+      flex: 0 1 auto;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 100% !important;
+      max-height: 100% !important;
+      object-fit: contain !important;
+      object-position: center center !important;
+    }
+    /* Bookworm group photo is a supporting visual, not the main page content. */
+    #bookworm .feature-page > .feature-hero {
+      width: min(100%, 440px) !important;
+      max-width: 440px !important;
+      margin: 0 auto !important;
+      padding: 10px;
+      align-self: center;
+    }
+    #bookworm .feature-page > .feature-hero > img {
+      max-height: 310px !important;
+    }
+    /* Bookworm: two compact photos side by side, both shown without cropping. */
+    #bookworm .bookworm-photo-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, .8fr);
+      gap: 16px;
+      width: min(100%, 860px);
+      align-items: stretch;
+      margin: 0;
+    }
+    #bookworm .bookworm-photo-grid > .feature-hero {
+      min-width: 0;
+      width: 100% !important;
+      max-width: none !important;
+      margin: 0 !important;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    #bookworm .bookworm-photo-grid > .feature-hero > img {
+      width: 100% !important;
+      height: 330px !important;
+      max-height: 330px !important;
+      object-fit: contain !important;
+      object-position: center;
+    }
+    #bookworm .bookworm-photo-grid .feature-hero figcaption {
+      width: 100%;
+      box-sizing: border-box;
+    }
+    @media (max-width: 650px) {
+      #bookworm .bookworm-photo-grid {
+        grid-template-columns: 1fr;
+        max-width: 500px;
+      }
+      #bookworm .bookworm-photo-grid > .feature-hero > img {
+        height: 300px !important;
+        max-height: 300px !important;
+      }
+    }
+
+    /* Also constrain images on the individual Bookworm/Humor pages. */
+    #bookworm .feature-hero,
+    #humor .feature-hero {
+      min-width: 0;
+      overflow: hidden;
+    }
+    #bookworm .feature-hero > img,
+    #humor .feature-hero > img {
+      display: block;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      object-fit: contain !important;
+    }
+
+    /* About page: research affiliations and institutional logos */
+    #about .affiliation {
+      margin: 24px 0 26px;
+      padding: 22px;
+      border: 1px solid rgba(67, 84, 145, .14);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, .72);
+      box-sizing: border-box;
+    }
+    #about .affiliation__eyebrow {
+      margin: 0 0 6px;
+      color: #65518f;
+      font-size: .75rem;
+      letter-spacing: .09em;
+      font-weight: 700;
+      text-transform: uppercase;
+    }
+    #about .affiliation h3 { margin: 0 0 9px; font-size: 1.15rem; }
+    #about .affiliation__text > p:last-child { margin-bottom: 14px; }
+    /* Affiliation logos live under the portrait, not in the research text. */
+    #about .about-left {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      min-width: 0;
+      width: 100%;
+      align-self: start;
+    }
+    #about .about-left > .pic {
+      display: block;
+      width: 100%;
+      margin: 0;
+      box-sizing: border-box;
+      overflow: hidden;
+    }
+    #about .about-left > .pic img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+    #about .about-logo-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      padding: 16px;
+      background: rgba(255,255,255,.75);
+      border: 1px solid rgba(67,84,145,.13);
+      border-radius: 16px;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+    #about .about-logo-panel__label {
+      font-size: .74rem;
+      letter-spacing: .07em;
+      text-transform: uppercase;
+      font-weight: 700;
+      color: #66578a;
+      margin: 0 0 2px;
+    }
+    #about .about-logo-stack {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      min-width: 0;
+    }
+    #about .about-logo {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      gap: 7px;
+      background: #fff;
+      border: 1px solid rgba(67,84,145,.11);
+      border-radius: 11px;
+      padding: 12px 14px;
+      text-decoration: none;
+      box-sizing: border-box;
+      min-width: 0;
+    }
+    #about .about-logo:hover { border-color: #7a66aa; }
+    #about .about-logo img {
+      display: block;
+      width: 100%;
+      max-width: 300px;
+      height: auto;
+      max-height: 68px;
+      object-fit: contain;
+    }
+    #about .about-logo span {
+      color: #68647a;
+      font-size: .73rem;
+      line-height: 1.25;
+      text-align: center;
+    }
+    @media (max-width: 520px) {
+      #about .affiliation { padding: 16px; }
+      #about .about-logo-panel { padding: 12px; }
+    }
+
+    /* Visual polish — November 2026: balanced desktop layout and readable project navigation */
+    header.top {
+      padding: 10px clamp(16px, 2.1vw, 34px) !important;
+      column-gap: clamp(12px, 1.4vw, 24px) !important;
+      box-sizing: border-box;
+      width: 100%;
+    }
+    header.top > .name { white-space: nowrap; margin: 0 !important; }
+    header.top > nav.tabs {
+      justify-content: flex-start !important;
+      flex: 1 1 auto !important;
+      min-width: 0;
+      gap: 4px !important;
+      padding: 4px !important;
+      box-sizing: border-box;
+    }
+    header.top > nav.tabs > button.tab { padding: 10px 11px; min-height: 44px; }
+
+    /* Centre the actual biography in the viewport instead of leaving an empty right side. */
+    #about > .two-col {
+      display: grid !important;
+      grid-template-columns: minmax(270px, 308px) minmax(0, 1fr) !important;
+      gap: clamp(28px, 3.8vw, 58px) !important;
+      width: min(calc(100% - 44px), 1190px) !important;
+      max-width: 1190px !important;
+      margin: 26px auto 80px !important;
+      align-items: start;
+      box-sizing: border-box;
+    }
+    #about > .two-col > .about-left { width: 100%; }
+    #about > .two-col > div:last-child { min-width: 0; width: 100%; max-width: 826px; }
+    #about .about-text { max-width: none !important; width: 100%; }
+    #about .about-text > p, #about .about-text > ul { line-height: 1.7; }
+    #about .affiliation {
+      width: 100%; max-width: none;
+      margin: 24px 0 26px;
+      padding: 22px 25px;
+      background: rgba(255,255,255,.76);
+    }
+    #about .about-logo-panel { padding: 13px; gap: 10px; }
+    #about .about-logo-stack { gap: 8px; }
+    #about .about-logo { padding: 10px 13px; gap: 2px; }
+    #about .about-logo img { max-height: 62px; }
+    #about .about-logo span { font-size: .72rem; }
+
+    /* Reconnect: the wide study infographic must follow its own natural ratio.
+       Don't force it into the portrait-like 4:3 photo frame. */
+    /* A smaller team portrait supports the much wider research graphic. */
+    #reconnect .reconnect-photo-grid {
+      grid-template-columns: minmax(0,.68fr) minmax(0,1.72fr) !important;
+      align-items: start !important;
+      gap: 18px;
+    }
+    #reconnect .reconnect-photo { align-self: start; height: auto !important; }
+    #reconnect .reconnect-photo--study .reconnect-photo__frame {
+      display: block !important;
+      aspect-ratio: auto !important;
+      height: auto !important;
+      min-height: 0 !important;
+      overflow: hidden;
+      background: transparent !important;
+    }
+    #reconnect .reconnect-photo--study .reconnect-photo__frame img {
+      width: 100% !important;
+      height: auto !important;
+      max-height: none !important;
+      aspect-ratio: auto !important;
+      object-fit: contain !important;
+      display: block;
+    }
+
+    /* Publications tell the research story through short, linked descriptions. */
+    #publications .wide { max-width: 1160px; margin-left: auto; margin-right: auto; }
+    #publications .pubs { padding: 0; list-style: none; }
+    #publications .pubs > li {
+      display: grid;
+      grid-template-columns: minmax(0,1fr) auto;
+      gap: 18px 24px;
+      align-items: center;
+      margin-bottom: 14px;
+      padding: 22px 24px;
+      background: rgba(255,255,255,.8);
+      border: 1px solid rgba(76,67,124,.12);
+      border-radius: 15px;
+      box-shadow: 0 4px 14px rgba(45,39,81,.035);
+    }
+    #publications .pubs > li > div:first-child { min-width: 0; }
+    #publications .pub-explain {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      line-height: 1.55;
+      color: #413b57;
+    }
+    #publications .pubs .pub-title {
+      margin: 0 0 6px;
+      font-size: 1.03rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: #29233e;
+    }
+    #publications .pubs .muted { margin: 0; font-size: .84rem; line-height: 1.45; }
+    #publications .pubs .pub-btns { display: flex; flex-wrap: wrap; gap: 7px; align-items: center; }
+    #publications .pub-intro { color: #625b79; margin: 0 0 24px; max-width: 750px; line-height: 1.6; }
+
+    @media (max-width: 1170px) {
+      header.top > nav.tabs { flex: 1 1 100% !important; }
+      header.top { gap: 4px 10px !important; }
+    }
+    @media (max-width: 800px) {
+      #about > .two-col {
+        grid-template-columns: 1fr !important;
+        width: min(calc(100% - 30px), 700px) !important;
+        gap: 26px !important;
+      }
+      #about .about-left { max-width: 470px; }
+      #about .about-logo-stack { flex-direction: row; }
+      #about .about-logo { flex: 1 1 50%; }
+      #reconnect .reconnect-photo-grid { grid-template-columns: 1fr !important; }
+      #publications .pubs > li { grid-template-columns: 1fr; padding: 18px; }
+    }
+    @media (max-width: 500px) {
+      #about .about-logo-stack { flex-direction: column; }
+      #publications .pubs .pub-btns { justify-content: flex-start; }
+      header.top > nav.tabs > button.tab { padding: 10px 9px; }
+    }
+
+    /* Affiliation logos: two equally sized, separate light cards below the portrait.
+       Keep their backgrounds bright and let the original JPEGs sit on white. */
+    #about .about-left > .about-logo-stack {
+      display: flex;
+      flex-direction: column;
+      align-items: stretch;
+      width: 100%;
+      gap: 12px;
+      margin: 2px 0 0;
+      padding: 0;
+      background: transparent;
+      border: none;
+    }
+    #about .about-logo-stack > .about-logo {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      height: 98px;
+      flex: 0 0 98px;
+      box-sizing: border-box;
+      margin: 0;
+      padding: 14px 19px !important;
+      border: 1px solid rgba(67, 84, 145, .15) !important;
+      border-radius: 13px;
+      background: #fff !important;
+      box-shadow: 0 2px 8px rgba(45, 39, 81, .035);
+      line-height: normal;
+      transition: border-color .15s ease, box-shadow .15s ease;
+    }
+    #about .about-logo-stack > .about-logo img {
+      display: block;
+      width: 100%;
+      height: 68px;
+      max-width: 255px;
+      max-height: 68px;
+      object-fit: contain;
+      object-position: center;
+      mix-blend-mode: normal;
+    }
+    #about .about-logo-stack > .about-logo:hover,
+    #about .about-logo-stack > .about-logo:focus-visible {
+      border-color: rgba(111, 87, 169, .55) !important;
+      box-shadow: 0 4px 12px rgba(45, 39, 81, .075);
+    }
+    @media (max-width: 800px) {
+      #about .about-left > .about-logo-stack {
+        flex-direction: row;
+        gap: 12px;
+      }
+      #about .about-logo-stack > .about-logo {
+        width: auto;
+        flex: 1 1 0;
+        min-width: 0;
+      }
+    }
+    @media (max-width: 450px) {
+      #about .about-left > .about-logo-stack { flex-direction: column; }
+      #about .about-logo-stack > .about-logo {
+        width: 100%;
+        flex: 0 0 98px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="top">
+    <button class="name" data-tab="about">Lena (Elena) Malnatsky</button>
+    <nav class="tabs" aria-label="Sections">
+      <button class="tab" data-tab="about">About &amp; contact</button>
+      <button class="tab" data-tab="research">Open Robot Memory</button>
+      <button class="tab" data-tab="reconnect">Robot Reconnect</button>
+      <button class="tab" data-tab="bookworm">Robot Bookworm</button>
+      <button class="tab" data-tab="humor">Fitting Humor</button>
+      <button class="tab" data-tab="projects">Projects</button>
+      <button class="tab" data-tab="publications">Publications</button>
+    </nav>
+  </header>
+
+  <main>
+
+    <!-- ABOUT -->
+    <section class="page" id="about">
+      <div class="two-col">
+        <div class="about-left">
+        <figure class="pic pic--tall" data-label="pics/web/about.jpg">
+          <img src="pics/web/about.jpg" alt="Elena with a social robot" onerror="this.remove()">
+        </figure>
+          <div class="about-logo-stack" aria-label="Research affiliations">
+            <a class="about-logo" href="https://www.hybrid-intelligence-centre.nl/" target="_blank" rel="noopener noreferrer" aria-label="Visit the Hybrid Intelligence Centre">
+              <img src="pics/web/hi-logo.jpg" alt="Hybrid Intelligence Centre logo" loading="lazy">
+            </a>
+            <a class="about-logo" href="https://vu.nl/en" target="_blank" rel="noopener noreferrer" aria-label="Visit Vrije Universiteit Amsterdam">
+              <img src="pics/web/vu-logo.jpg" alt="Vrije Universiteit Amsterdam logo" loading="lazy">
+            </a>
+          </div>
+        </div>
+        <div>
+          <h2>About me</h2>
+          <div class="about-text">
+            <p>
+              I am a PhD researcher in the Social AI Group at Vrije Universiteit Amsterdam.
+              I study how to design socially intelligent AI systems for children—especially
+              social robots—with a focus on education, long-term interaction and responsible AI.
+            </p>
+            <p>
+              My work combines generative AI, participatory design and empirical studies in
+              real schools. I enjoy developing new interaction concepts, but I care just as much
+              about whether they are meaningful to children—and whether children have a genuine
+              say in the technology built for them.
+            </p>
+            <p>
+              My PhD is supervised by
+              <a href="https://research.vu.nl/en/persons/mike-ligthart/" target="_blank" rel="noopener noreferrer">Dr Mike E.U. Ligthart</a>
+              and <a href="https://research.vu.nl/en/persons/koen-hindriks/" target="_blank" rel="noopener noreferrer">Prof. Koen V. Hindriks</a>
+              at VU Amsterdam, and
+              <a href="https://people.utwente.nl/shenghui.wang" target="_blank" rel="noopener noreferrer">Dr Shenghui Wang</a>
+              at the University of Twente. Their complementary perspectives on child–robot
+              interaction, social AI, and language technologies help connect the human and
+              technical sides of my research.
+            </p>
+            <div class="affiliation" aria-label="Research affiliations">
+              <div class="affiliation__text">
+                <p class="affiliation__eyebrow">Research community</p>
+                <h3>Part of the Hybrid Intelligence consortium</h3>
+                <p>
+                  I feel fortunate and proud to be part of the
+                  <a href="https://www.hybrid-intelligence-centre.nl/" target="_blank" rel="noopener noreferrer">Hybrid Intelligence (HI) consortium</a>,
+                  a long-term collaboration among Dutch universities exploring
+                  how human and artificial intelligence can work together.
+                  The consortium is supported by the
+                  <a href="https://vu.nl/en/research/gravitation-project-hybrid-intelligence" target="_blank" rel="noopener noreferrer">NWO Gravitation Programme</a>
+                  (grant <strong>024.004.022</strong>, 2019–2029).
+                  Its commitment to collaborative, adaptive, responsible and
+                  explainable AI is closely aligned with my own research.
+                </p>
+              </div>
+
+            </div>
+            <p>Across my PhD, I have explored three connected challenges:</p>
+            <ul class="about-list">
+              <li>
+                <b>Meaningful educational applications:</b> In <a href="#bookworm">Robot Bookworm</a>,
+                which I co-led with Dr Mike Ligthart, we explored how personalized conversations
+                with a robot might make reading more enjoyable and deepen children's connection to books.
+              </li>
+              <li>
+                <b>Long-term interaction and relationships:</b> I initiated and led
+                <a href="#reconnect">Robot Reconnect</a>, supervising two BSc thesis students
+                as we explored how a robot can reconnect with children after a long break—and
+                keep its knowledge of them up to date.
+              </li>
+              <li>
+                <b>Responsible and child-centred AI:</b> In <a href="#research">Open Robot Memory</a>,
+                a project I initiated and led, we designed ways for children to inspect, question
+                and change what a robot remembers about them.
+              </li>
+            </ul>
+            <p>
+              These projects share a common ambition: to move beyond AI systems that merely
+              adapt to children, towards systems children can understand, challenge and actively shape.
+            </p>
+          </div>
+          <div class="about-contact">
+            <p class="about-contact__label">Contact</p>
+            <div class="about-contact__row">
+              <span class="about-contact__type">Work</span>
+              <a class="about-contact__email" href="mailto:e.malnatsky@vu.nl">e.malnatsky@vu.nl</a>
+              <button class="btn btn--light btn--sm copy-email" data-email="e.malnatsky@vu.nl">Copy</button>
+            </div>
+            <div class="about-contact__row">
+              <span class="about-contact__type">Personal</span>
+              <a class="about-contact__email" href="mailto:l.malnatsky@gmail.com">l.malnatsky@gmail.com</a>
+              <button class="btn btn--light btn--sm copy-email" data-email="l.malnatsky@gmail.com">Copy</button>
+            </div>
+            <ul class="about-contact__links">
+              <li><a href="https://research.vu.nl/en/persons/elena-malnatsky/" target="_blank" rel="noopener">VU research profile</a></li>
+              <li><a href="https://orcid.org/0009-0008-4822-2944" target="_blank" rel="noopener">ORCID</a></li>
+              <li><a href="https://www.linkedin.com/search/results/people/?keywords=Lena%20(Elena)%20Malnatsky" target="_blank" rel="noopener">LinkedIn</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CURRENT RESEARCH -->
+    <section class="page" id="research">
+      <div class="research">
+
+        <aside class="orm-update" aria-label="Project news, 20 November 2026">
+          <span class="orm-update__date">UPDATE · 20 NOVEMBER 2026</span>
+          <p>We are very proud that <strong>Julianna Cisewska has won the Faculty Master’s Thesis Award at Vrije Universiteit Amsterdam</strong> for her MSc thesis developed as part of <em>Open Robot Memory</em>. Congratulations, Julianna - a wonderful recognition of your excellent work and contribution to the project!</p>
+        </aside>
+
+        <!-- Introduction, before the photography -->
+        <div class="orm-introduction">
+<h2>Open Robot Memory <span class="h2-sub">formerly Open-Minded Robots</span></h2>
+<p><em>Giving children insight into and influence over what social robots remember about them.</em></p>
+<p>
+            Social robots that personalize their conversations remember information about the
+            children they interact with. But children rarely get to see what these robots
+            remember, let alone correct it.
+          </p>
+<p>
+            Drawing on my experiences from previous studies with children in schools, I began
+            to question this one-sided approach to personalization.
+            <strong>Could we design child-facing AI systems that are more transparent and give
+            children meaningful influence over what these systems remember about them?</strong>
+</p>
+          <p>This question became the starting point for <em>Open Robot Memory</em>.</p>
+        </div>
+
+        <!-- Four photos visible immediately: large team portrait + three smaller highlights. -->
+        <div class="orm-featured-gallery" aria-label="Project highlights">
+          <figure class="orm-photo-card orm-photo-card--hero">
+            <img src="pics/web/OpenMemoryTeam.png" alt="The Open Robot Memory team with Leo and the Memory Book" loading="eager">
+            <figcaption>The Open Robot Memory team</figcaption>
+          </figure>
+          <div class="orm-gallery-side">
+            <figure class="orm-photo-card">
+              <img src="pics/web/study-girl.jpg" alt="A child speaking with Leo during the robot memory study" loading="eager">
+              <figcaption>One-on-one conversations with Leo</figcaption>
+            </figure>
+            <figure class="orm-photo-card">
+              <img src="pics/web/study-tablet.jpg" alt="A child using the Memory Book tablet alongside Leo" loading="eager">
+              <figcaption>Checking memories in the Memory Book</figcaption>
+            </figure>
+            <figure class="orm-photo-card">
+              <img src="pics/web/codesign-session.jpg" alt="Children exploring robot memory in a co-design activity" loading="eager">
+              <figcaption>Designing together with children</figcaption>
+            </figure>
+          </div>
+        </div>
+
+        <!-- The rest stay collapsed until a visitor chooses to browse. -->
+        <details class="orm-more-photos">
+          <summary>Explore the full photo gallery <span class="orm-photo-count">7 photos</span></summary>
+<div class="gallery">
+<figure class="gallery__main">
+<img alt="The Open Robot Memory team with Leo and the Memory Book" id="gallery-img" src="pics/web/OpenMemoryTeam.png"/>
+</figure>
+<div class="gallery__bar">
+<button aria-label="Previous photo" class="btn btn--light btn--sm" id="gallery-prev">←</button>
+<p class="gallery__caption" id="gallery-caption"></p>
+<button aria-label="Next photo" class="btn btn--light btn--sm" id="gallery-next">→</button>
+</div>
+<div class="gallery__thumbs">
+<button class="thumb is-on" data-caption="The Open Robot Memory team with Leo and the Memory Book" data-src="pics/web/OpenMemoryTeam.png"><img alt="Open Robot Memory team photo" src="pics/web/OpenMemoryTeam.png"/></button>
+<button class="thumb" data-caption="A child talking with the robot during the study" data-src="pics/web/study-girl.jpg"><img alt="Child talking with the robot" src="pics/web/study-girl.jpg"/></button>
+<button class="thumb" data-caption="Looking through the Memory Book on a tablet next to the robot" data-src="pics/web/study-tablet.jpg"><img alt="Child using the Memory Book tablet" src="pics/web/study-tablet.jpg"/></button>
+<button class="thumb" data-caption="Co-design session: children drawing what the robot's memory could look like" data-src="pics/web/codesign-session.jpg"><img alt="Children in a co-design session" src="pics/web/codesign-session.jpg"/></button>
+<button class="thumb" data-caption="The co-designed Memory Book" data-src="pics/web/memorybook-cover.jpg"><img alt="Memory Book cover" src="pics/web/memorybook-cover.jpg"/></button>
+<button class="thumb" data-caption="Memory Book chapters: hobbies, sport, music, books, friends, animals, food, school and dreams" data-src="pics/web/memorybook-chapters.jpg"><img alt="Memory Book table of contents" src="pics/web/memorybook-chapters.jpg"/></button>
+<button class="thumb" data-caption="A chapter showing what the robot remembers about a child" data-src="pics/web/memorybook-page.jpg"><img alt="Memory Book chapter page" src="pics/web/memorybook-page.jpg"/></button>
+</div>
+</div>
+        </details>
+
+        <!-- Research story -->
+        <div class="research__text">
+
+<h3>From research idea to working system</h3>
+<p>
+            Over the past year, together with a wonderful team of BSc and MSc thesis students,
+            we developed and evaluated this idea in Dutch primary schools. These schools have
+            been valued research partners for several years, welcoming me back for new studies
+            with our social robot, Leo. Some participating children had interacted with Leo
+            before, while others were meeting him for the first time.
+          </p>
+<p>
+            Bringing this system to life was a real team effort. Following a
+            <strong>child-centred, participatory design approach</strong>, we began by exploring
+            children's understanding of what it means for a robot to remember things about them.
+            Through co-design activities, children shared how they imagined a robot's memory,
+            what they thought it should remember, and how they would like to interact with it.
+          </p>
+<p>
+            We translated these ideas into a system that allowed children to inspect,
+            question, and correct the robot's memory through natural conversation, using
+            their own words.
+          </p>
+<h3>Putting the design to the test</h3>
+<p>
+            We evaluated our design in a study with <strong>71 children aged 10–12 from three
+            classes at two Dutch primary schools</strong>. During one-on-one conversations with
+            Leo about school life, personal interests, and future aspirations, children could
+            ask what the robot remembered about them and correct that information in their own words.
+          </p>
+<p>
+            Some children also had access to the <strong>Memory Book</strong>, a tablet-based
+            interface implemented by Julianna, allowing them to inspect the robot's memory
+            and check whether their corrections had been registered.
+          </p>
+<p>
+            To explore how children respond when a robot gets something wrong, we deliberately
+            introduced a few wrong claims into the conversations. We investigated when and how
+            children challenged these mistakes, whether the robot successfully incorporated
+            their corrections, and how making its memory visible influenced children's
+            understanding and sense of agency.
+          </p>
+<p>
+            Along the way, we also discovered that broccoli wasn't anyone's favourite food,
+            and becoming a school principal wasn't a particularly popular career ambition either. :)
+          </p>
+<div class="card">
+<p class="small-title">What we investigated</p>
+<ul class="list">
+<li>How do children understand what a robot remembers about them?</li>
+<li>How do they respond when the robot gets something wrong?</li>
+<li>When children try to correct its memory, does the robot successfully register those corrections?</li>
+<li>How does making robot memory visible influence children's understanding and sense of agency?</li>
+</ul>
+</div>
+<h3>Looking ahead</h3>
+<p>
+            Ultimately, this project explores how we can move beyond AI systems that simply
+            remember information about children, towards <strong>systems whose memories children
+            can understand, question, and actively shape</strong>.
+          </p>
+<p>
+            I am very proud of Julianna, Eunike, Sherissa, and Sander, each of whom developed
+            an excellent thesis as part of this project. I am also very proud that
+            <em>Open Robot Memory</em> is my first largely independent scientific initiative
+            and research project. We are currently working on publishing the results of our research.
+          </p>
+        </div>
+
+        <!-- Research team and attribution -->
+<div class="credit">
+<h3>Project team and contributions</h3>
+<p>
+            This project was a collaborative effort. The whole team helped conduct the co-design
+            activities and evaluation studies, participated in developing and testing the system,
+            and carried out their own analyses.
+          </p>
+<ul class="team">
+<li>
+<b>Lena (Elena) Malnatsky</b>
+<span class="team__prog">(Project initiator and scientific lead)</span>:
+              Conceived and led the project, developed its scientific vision and research
+              questions, designed the co-design activities and experimental study, developed
+              the overall system and interaction concepts, coordinated school partnerships
+              and research activities, and supervised the student researchers.
+            </li>
+<li>
+<b>Julianna Cisewska</b>
+<span class="team__prog">(MSc student researcher)</span>:
+              Developed and implemented the Memory Book tablet interface, using co-design
+              insights. Contributed to conducting and analysing the co-design activities,
+              integrated the interface with the robot's memory system, took a leading role
+              in implementing the robot interactions, and supported the wider team with
+              coordination and practical tasks throughout the project.
+            </li>
+<li>
+<b>Eunike Kristiani</b>
+<span class="team__prog">(MSc student researcher)</span>:
+              Designed and implemented the memory ontology, knowledge graph, database backend,
+              and APIs supporting the robot's memory system, and contributed to preparing the
+              personalized data used during interactions.
+            </li>
+<li>
+<b>Sander Bindels</b>
+<span class="team__prog">(Student researcher)</span>:
+              Contributed to the development and implementation of the robot's conversational
+              interactions, system integration, testing, and execution of the user study.
+            </li>
+<li>
+<b>Sherissa Geldof</b>
+<span class="team__prog">(BSc student researcher)</span>:
+              Contributed to the co-design activities, interaction development and testing,
+              study execution, child interviews, data annotation, and analysis of children's
+              experiences and agency over robot memory.
+            </li>
+</ul>
+<p class="small-title">My thesis advisors</p>
+<p>
+            Dr Mike E.U. Ligthart, Prof. Koen Hindriks, and Dr Shenghui Wang provided
+            scientific advice, feedback, and support throughout the research.
+          </p>
+</div>
+
+      </div>
+    </section>
+
+
+    <!-- ROBOT RECONNECT: a directly shareable project page -->
+    <section class="page" id="reconnect">
+      <div class="reconnect-page">
+        <div class="reconnect-intro">
+          <h2>Robot Reconnect <span class="h2-sub">Keeping child–robot relationships alive over time</span></h2>
+          <p><em>How can a social robot reconnect with children after a long break — without the physical robot being there?</em></p>
+          <p>
+            A personalized robot may remember a child from one interaction to the next, but
+            what happens when a year passes? Children's interests change, some things are
+            forgotten, and the relationship itself may need renewing. Following our
+            <em>Robot Bookworm</em> study, I wanted to explore how we could sustain both
+            the social connection and the robot's knowledge of the child over time.
+          </p>
+          <p>
+            Together with a team of BSc students, we designed a practical way for children
+            to reconnect with Leo <strong>without bringing the physical robot back into the classroom</strong>.
+          </p>
+        </div>
+
+        <!-- Add these two photos to pics/web/ when ready. -->
+        <div class="reconnect-photo-grid" aria-label="Robot Reconnect photos">
+          <figure class="reconnect-photo">
+            <div class="reconnect-photo__frame">
+              <img src="pics/web/reconnect-team.jpg"
+                   alt="The Robot Reconnect project team"
+                   loading="eager"
+                   onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+              <span class="reconnect-photo__placeholder" hidden>Team photo — reconnect-team.jpg</span>
+            </div>
+            <figcaption>Our Robot Reconnect research team</figcaption>
+          </figure>
+          <figure class="reconnect-photo reconnect-photo--study">
+            <div class="reconnect-photo__frame">
+              <img src="pics/web/reconnect-study.jpg"
+                   alt="Robot Reconnect study: reconnecting with Leo through personalized letters and web chat"
+                   loading="eager"
+                   onerror="this.hidden=true;this.nextElementSibling.hidden=false">
+              <span class="reconnect-photo__placeholder" hidden>Study image — reconnect-study.jpg</span>
+            </div>
+            <figcaption>Reconnecting with Leo through a personalized letter and web chat</figcaption>
+          </figure>
+        </div>
+
+        <div class="reconnect-story">
+          <h3>A year later, Leo says hello again</h3>
+          <p>
+            <strong>51 children</strong> who had previously met Leo in the Robot Bookworm study
+            took part in this follow-up. Each child experienced two personalized forms of
+            reconnection: a paper letter written in Leo's voice and a web-based chat with him.
+            Both drew on what Leo had learned about the child's interests and preferences
+            during the earlier study.
+          </p>
+          <p>
+            The interactions were designed to make children feel remembered while also
+            giving them opportunities to correct outdated details, share new information,
+            and refresh the robot's memory. We investigated children's sense of connection,
+            their experiences with the two modalities, and how well the reconnection helped
+            recover or update personal information.
+          </p>
+        </div>
+
+        <div class="reconnect-story">
+          <h3>From reconnecting to open memory</h3>
+          <p>
+            Beyond exploring how to reconnect with a familiar robot, the study revealed the
+            importance of keeping a robot's knowledge up to date and allowing children to
+            influence what it remembers. These questions helped motivate the next step in
+            my research: <a href="#research">Open Robot Memory</a>.
+          </p>
+          <p>
+            The study also supported two excellent BSc thesis projects. We are working on
+            sharing the research through a scientific publication.
+          </p>
+        </div>
+
+        <div class="credit reconnect-credits">
+          <h3>Project team and contributions</h3>
+          <ul class="team">
+            <li><b>Lena (Elena) Malnatsky</b>
+                <span class="team__prog">(Research lead and student supervisor)</span>:
+                Led the Robot Reconnect research, designed the study and its personalized
+                reconnection approach, and supervised the student projects.</li>
+            <li><b>Maria Sandu</b>
+                <span class="team__prog">(BSc student researcher)</span>:
+                Developed and evaluated a personalized web-based chat with Leo.</li>
+            <li><b>Alexandra Gheorghe</b>
+                <span class="team__prog">(BSc student researcher)</span>:
+                Designed and evaluated a knowledge-graph-based user model for long-term
+                personalized interactions.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ROBOT BOOKWORM: a directly shareable project page -->
+    <section class="page" id="bookworm">
+      <div class="feature-page">
+        <div class="feature-intro">
+          <h2>The Robot Bookworm <span class="h2-sub">Personalized reading support</span></h2>
+          <p><em>What if a robot could be a reading companion rather than another teacher?</em></p>
+          <p>
+            Just before I began my PhD, my supervisor, Dr Mike E.U. Ligthart,
+            invited me to join <em>Robot Bookworm</em>. Its original research team
+            had come together through an interdisciplinary pilot supported by the
+            <a href="https://networkinstitute.org/projects/the-robot-bookworm-stimulating-childrens-reading-motivation-and-comprehension/" target="_blank" rel="noopener noreferrer">VU Network Institute's Academy Assistants programme</a>.
+            Mike's idea was to support children's reading motivation through
+            personalized, relatable conversations about books with a social robot.
+            I gladly joined: the prospect of a robot that could be a curious
+            reading companion, rather than deliver another lesson, was exactly
+            the kind of research I wanted to pursue.
+          </p>
+          <p>
+            I was fortunate that Mike gave me considerable scientific freedom to
+            help shape the project. The primary schools where I had conducted
+            my MSc thesis research also warmly welcomed us back to carry out
+            the study. Mike and I co-led <em>Robot Bookworm</em> with an enthusiastic
+            student team: Adriana Cabrera and Sobhaan Ul Husan, together with
+            Kuhu Sinha, Sofie Veld, Rafaella van Nee, and Daniël Wijnhorst.
+            Much of this work grew out of BSc and MSc student projects.
+          </p>
+        </div>
+
+        <div class="bookworm-photo-grid" aria-label="Robot Bookworm study photos">
+          <figure class="feature-hero">
+            <img src="pics/web/bookworm.jpg" alt="The Robot Bookworm project with Leo" loading="eager">
+            <figcaption>Robot Bookworm: personalized reading conversations with Leo</figcaption>
+          </figure>
+          <figure class="feature-hero">
+            <img src="pics/web/bookworm2.jpg" alt="Two children holding Leo in their classroom during Robot Bookworm" loading="eager">
+            <figcaption>Leo with young readers during Robot Bookworm</figcaption>
+          </figure>
+        </div>
+
+        <div class="feature-meta" aria-label="Project overview">
+          <span>Dialogic learning</span>
+          <span>Personalized reading</span>
+          <span>Human-reviewed generative AI</span>
+          <span>Three Bookworm publications · 2026</span>
+        </div>
+
+        <div class="feature-story">
+          <h3>Making reading personal</h3>
+          <p>
+            We built an experience around more than simply asking a child
+            questions about a book. Leo got to know each child's interests and
+            reading preferences, helped them find a personally fitting book,
+            and returned to discuss its characters, events, and connections
+            to the child's own life. The sessions also included reading tips,
+            encouragement, humor, and a personalized bookmark with a
+            reading plan that the child helped create.
+          </p>
+          <p>
+            A central idea emerging from the project was <strong>dialogic learning
+            in child–robot interaction</strong>: the robot should invite children to
+            explain, interpret, make connections, and express their own views,
+            rather than test them with questions that have only one correct
+            answer. We developed this idea in our
+            <a href="https://doi.org/10.1609/aaaiss.v5i1.35622" target="_blank" rel="noopener noreferrer">AAAI Spring Symposium 2025 paper on dialogic learning</a>.
+          </p>
+
+          <h3>Combining the creativity of AI with human oversight</h3>
+          <p>
+            To make book-specific conversations feasible at scale, we developed
+            a <strong>hybrid human–AI content generation framework</strong>.
+            Rather than letting a language model improvise unrestricted
+            conversations with children, we used it selectively to generate
+            personalized dialogue content <em>offline</em>. Automatic checks and
+            human moderation filtered and refined the content before it could
+            be used by Leo within structured, pedagogically motivated
+            interactions. The approach is described in both our
+            <a href="https://doi.org/10.1609/aaaiss.v5i1.35622" target="_blank" rel="noopener noreferrer">initial hybrid-dialogue paper (AAAI 2025)</a>
+            and our more detailed
+            <a href="https://doi.org/10.1007/978-3-032-29760-0_25" target="_blank" rel="noopener noreferrer">framework paper (AIED 2026)</a>.
+          </p>
+
+          <h3>What did we find?</h3>
+          <p>
+            Together, we designed and ran a four-session study with
+            <strong>101 children aged 8–11 across two primary schools</strong>.
+            Compared with book-neutral conversations, personalized book
+            discussions increased children's <strong>reading enjoyment</strong>
+            and their <strong>sense of connection to their book</strong>, especially
+            among children whose initial reading enjoyment was not already at
+            its maximum. We did <em>not</em> find an increase in the measured
+            intrinsic reading motivation score. The quantitative effects were
+            no longer detectable at the one-year follow-up, although children
+            still described positive changes in how they saw reading and
+            attributed some of those changes to Leo.
+          </p>
+          <p>
+            For me, this project demonstrated not just the potential of
+            personalized child–robot conversations, but also what becomes
+            possible when educational design, generative AI, and long-standing
+            collaboration with schools come together.
+          </p>
+
+          <h3>Research papers</h3>
+          <p>
+            Three papers examine complementary aspects of Robot Bookworm:
+            the effect of personalized book discussions on children's reading experiences
+            (HRI), the architecture supporting multi-session interactions (RO-MAN),
+            and the hybrid framework for generating personalized dialogue content
+            with human oversight (AIED).
+          </p>
+          <div class="feature-actions">
+            <a class="btn" href="https://doi.org/10.1145/3757279.3785618" target="_blank" rel="noopener noreferrer">Study &amp; outcomes · HRI 2026</a>
+            <a class="btn btn--light" href="https://ieeexplore.ieee.org/document/11714782" target="_blank" rel="noopener noreferrer">Multi-session architecture · RO-MAN 2026</a>
+            <a class="btn btn--light" href="https://doi.org/10.1007/978-3-032-29760-0_25" target="_blank" rel="noopener noreferrer">Content generation · AIED 2026</a>
+          </div>
+
+          <h3>Beyond a single study</h3>
+          <p>
+            Robot Bookworm also raised an important question: what happens
+            to a personalized child–robot relationship when a year goes by?
+            We returned to explore how Leo could reconnect with children
+            after that long absence, leading to the
+            <a href="#reconnect">Robot Reconnect project</a> and, eventually,
+            new questions about children's influence over a robot's memory.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FITTING HUMOR: a directly shareable project page -->
+    <section class="page" id="humor">
+      <div class="feature-page">
+        <div class="feature-intro">
+          <h2>Fitting Humor <span class="h2-sub">Age-based personalization</span></h2>
+          <p><em>What makes a robot's jokes funny and relatable to children of different ages?</em></p>
+          <p>
+            Humor is one way social robots can build rapport with children—but
+            what is funny to one age group may fall completely flat with another.
+            In <em>Fitting Humor</em>, we explored how children's own humor preferences
+            could inform more relatable robot interactions.
+          </p>
+        </div>
+
+        <figure class="feature-hero">
+          <img src="pics/web/humor.jpg" alt="Fitting Humor research overview: from co-design workshops to age-personalized robot jokes" loading="eager">
+          <figcaption>From children's humor ideas to age-fitted jokes delivered by Leo</figcaption>
+        </figure>
+
+        <div class="feature-meta" aria-label="Project overview">
+          <span>102 children in co-design</span>
+          <span>88 children in evaluation</span>
+          <span>HRI 2025 full paper</span>
+          <span>HRI 2025 Best Paper Honorable Mention</span>
+        </div>
+
+        <div class="feature-story">
+          <h3>Humor designed with children</h3>
+          <p>
+            We first worked with <strong>102 children aged 8–12</strong> in co-design
+            workshops to explore what kinds of humor different age groups enjoyed.
+            Their drawings, preferences, and ideas informed the jokes Leo would use
+            in personalized conversations.
+          </p>
+          <h3>Does age-fitting make a difference?</h3>
+          <p>
+            We then evaluated the jokes with <strong>88 children</strong>. Children
+            generally found age-fitted robot humor more amusing and better matched
+            to their own and their peers' sense of humor. The project highlighted
+            how involving children can improve the design of social personalization.
+          </p>
+          <p>
+            One lesson has stayed with me: <strong>we could not have written
+            these jokes without the children.</strong>
+          </p>
+          <div class="feature-actions">
+            <a class="btn" href="https://research.vu.nl/en/publications/fitting-humor-age-based-persaonalization-for-shaping-relatable-ch/" target="_blank" rel="noopener">Read the HRI 2025 paper</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section class="page" id="projects">
+      <div class="wide">
+        <div class="row-between">
+          <h2>Projects</h2>
+          <div class="carousel__controls">
+            <button class="btn btn--light btn--sm" id="proj-prev" aria-label="Previous project">←</button>
+            <span class="carousel__count" id="proj-count">1 / 4</span>
+            <button class="btn btn--light btn--sm" id="proj-next" aria-label="Next project">→</button>
+          </div>
+        </div>
+
+        <div class="carousel" id="proj-track">
+
+          <article class="project" data-project="codesign">
+            <figure class="pic" data-label="pics/web/memorybook-cover.jpg">
+              <img src="pics/web/memorybook-cover.jpg" alt="The co-designed Memory Book" onerror="this.remove()">
+            </figure>
+            <div>
+              <p class="project__venue">Current project</p>
+              <h3>Open Robot Memory</h3>
+              <p class="project__sub">Letting children see and change what a robot remembers</p>
+              <p>Together with children, we co-designed a Memory Book and ways for a robot to talk about what it remembers. Then 71 children aged 10–12 talked with the robot and could ask about and correct what it knew about them, including a few deliberate mistakes.</p>
+              <div class="buttons">
+                <a class="btn" href="#research">View Open Robot Memory</a>
+              </div>
+            </div>
+          </article>
+
+
+          <article class="project" data-project="reconnect">
+            <figure class="pic" data-label="pics/web/reconnect-study.jpg">
+              <img src="pics/web/reconnect-study.jpg" alt="Robot Reconnect study: letter and web chat" onerror="this.remove()">
+            </figure>
+            <div>
+              <p class="project__venue">Long-term child–robot interaction</p>
+              <h3>Robot Reconnect</h3>
+              <p class="project__sub">Reconnecting with Leo after a year apart</p>
+              <p>One year after Robot Bookworm, 51 children reconnected with Leo using a personalized paper letter and web chat, without the physical robot. We investigated social reconnection and updating what the robot remembers.</p>
+              <div class="buttons">
+                <a class="btn" href="#reconnect">Explore Robot Reconnect</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" data-project="bookworm">
+            <figure class="pic" data-label="pics/web/bookworm.jpg">
+              <img src="pics/web/bookworm.jpg" alt="" onerror="this.remove()">
+            </figure>
+            <div>
+              <p class="project__venue">HRI 2026 · AIED 2026</p>
+              <h3>The Robot Bookworm</h3>
+              <p class="project__sub">Personalised book talks with a social robot</p>
+              <p>Leo helped children find fitting books, create reading plans, and talk about stories. Personalized, human-reviewed dialogues improved reading enjoyment and children's connection to their books.</p>
+              <div class="buttons">
+                <a class="btn" href="#bookworm">Explore Robot Bookworm</a>
+                <a class="btn btn--light" href="https://research.vu.nl/en/publications/the-robot-bookworm-fostering-childrens-reading-motivation-through/" target="_blank" rel="noopener">Read the paper</a>
+                <a class="btn btn--light" href="https://doi.org/10.1007/978-3-032-29760-0_25" target="_blank" rel="noopener">AIED paper</a>
+              </div>
+            </div>
+          </article>
+
+          <article class="project" data-project="humor">
+            <figure class="pic" data-label="pics/web/humor.jpg">
+              <img src="pics/web/humor.jpg" alt="" onerror="this.remove()">
+            </figure>
+            <div>
+              <p class="project__venue">HRI 2025</p>
+              <h3>Fitting Humor</h3>
+              <p class="project__sub">Robot humour that fits a child's age</p>
+              <p>Co-design workshops with 102 children aged 8–12 identified the humour that suits each age group. In a follow-up study, children found the robot funnier and more relatable when its humour matched their age.</p>
+              <div class="buttons">
+                <a class="btn" href="#humor">Explore Fitting Humor</a>
+                <a class="btn btn--light" href="https://research.vu.nl/en/publications/fitting-humor-age-based-persaonalization-for-shaping-relatable-ch/" target="_blank" rel="noopener">Read the paper</a>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div class="carousel__dots" id="proj-dots"></div>
+      </div>
+    </section>
+
+    <!-- PUBLICATIONS -->
+    <section class="page" id="publications">
+      <div class="wide">
+        <div class="row-between">
+          <h2>Publications</h2>
+          <div class="filters">
+            <button class="pill is-on" data-year="all">All</button>
+            <button class="pill" data-year="2024">2024</button>
+            <button class="pill" data-year="2025">2025</button>
+            <button class="pill" data-year="2026">2026</button>
+          </div>
+        </div>
+
+        <p class="pub-intro">From the first research ideas to later studies and systems, these publications trace how my work on personalization developed into educational interaction and long-term robot memory. Each entry explains its particular contribution to that story.</p>
+
+        <ul class="pubs">
+          <li data-year="2024">
+            <div>
+              <p class="pub-explain">I had the honor to be selected for <a href="https://hripioneers.org/archives/hri24/" target="_blank" rel="noopener noreferrer">HRI Pioneers</a>, a selective workshop for student researchers held alongside the main HRI conference. This paper introduced my PhD direction: it presented our age-based robot humor work with children and proposed Robot Bookworm as the next step, extending personalization into sustained conversations about reading.</p>
+              <p class="pub-title">Shaping Relatable Robots: A Child-Centered Approach to Social Personalization</p>
+              <p class="muted">E. Malnatsky, S. Wang, K. V. Hindriks, M. E. U. Ligthart · HRI 2024 · Pioneers Workshop · Companion</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://doi.org/10.1145/3610978.3638374" target="_blank" rel="noopener noreferrer">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="E. Malnatsky, S. Wang, K. V. Hindriks, M. E. U. Ligthart (2024). Shaping Relatable Robots: A Child-Centered Approach to Social Personalization. Companion Proceedings of HRI 2024, pp. 127–129. https://doi.org/10.1145/3610978.3638374">Cite</button>
+            </div>
+          </li>
+          <li data-year="2025">
+            <div>
+              <p class="pub-explain">The age-based humor study introduced at HRI Pioneers became this full paper. Through co-design workshops and a user study, we examined whether humor tailored to children’s age groups could make robot interactions more amusing and relatable. It showed that personalization is also about fitting a child’s personal and social world, not simply remembering facts.</p>
+              <p class="pub-title">Fitting Humor: Age-Based Personalization for Shaping Relatable Child-Robot Interactions</p>
+              <p class="muted">E. Malnatsky, M. E. U. Ligthart · HRI 2025 · Full paper · Best Paper Honorable Mention</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://research.vu.nl/en/publications/fitting-humor-age-based-persaonalization-for-shaping-relatable-ch/" target="_blank" rel="noopener noreferrer">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="E. Malnatsky, M. E. U. Ligthart (2025). Fitting Humor: Age-Based Personalization for Shaping Relatable Child-Robot Interactions. Proceedings of HRI 2025, pp. 331–341.">Cite</button>
+            </div>
+          </li>
+          <li data-year="2026">
+            <div>
+              <p class="pub-explain">This is the main evaluation of Robot Bookworm, first proposed in our 2024 Pioneers paper. Across four sessions with 101 children, personalized book discussions improved reading enjoyment and children’s sense of connection to their books, but not measured intrinsic reading motivation. It examines the educational impact of a personalized robot reading companion.</p>
+              <p class="pub-title">The Robot Bookworm: Fostering Children&#x27;s Reading Motivation through Personalized Book Discussions</p>
+              <p class="muted">E. Malnatsky, S. Ul Husan, K. Sinha, S. Veld, R. van Nee, D. Wijnhorst, S. Wang, K. V. Hindriks, M. E. U. Ligthart · HRI 2026 · Full paper</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://doi.org/10.1145/3757279.3785618" target="_blank" rel="noopener noreferrer">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="E. Malnatsky, S. Ul Husan, K. Sinha, S. Veld, R. van Nee, D. Wijnhorst, S. Wang, K. V. Hindriks, M. E. U. Ligthart (2026). The Robot Bookworm: Fostering Children&#x27;s Reading Motivation through Personalized Book Discussions. Proceedings of HRI 2026, pp. 1010–1019. https://doi.org/10.1145/3757279.3785618">Cite</button>
+            </div>
+          </li>
+          <li data-year="2025">
+            <div>
+              <p class="pub-explain">From making a robot relatable, we moved to making its conversations educationally meaningful. This paper introduced a hybrid dialogic-learning approach: structured, pedagogically guided conversations, with language models generating selected personalized content offline and humans reviewing it before use.</p>
+              <p class="pub-title">Dialogic Learning in Child-Robot Interaction: A Hybrid Approach to Personalized Educational Content Generation</p>
+              <p class="muted">E. Malnatsky, S. Wang, K. V. Hindriks, M. E. U. Ligthart · AAAI Spring Symposium 2025</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://doi.org/10.1609/aaaiss.v5i1.35622" target="_blank" rel="noopener noreferrer">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="E. Malnatsky, S. Wang, K. V. Hindriks, M. E. U. Ligthart (2025). Dialogic Learning in Child-Robot Interaction: A Hybrid Approach to Personalized Educational Content Generation. Proceedings of the AAAI Symposium Series, 5(1), pp. 416–420. https://doi.org/10.1609/aaaiss.v5i1.35622">Cite</button>
+            </div>
+          </li>
+          <li data-year="2025">
+            <div>
+              <p class="pub-explain">At the IDC Doctoral Consortium, I presented my research direction and future plans, outlining next steps for child-centered design, personalized educational dialogue, and the responsible integration of generative AI.</p>
+              <p class="pub-title">Towards Dialogic Education through Child-Robot Interaction: A Hybrid Child-Centered Framework</p>
+              <p class="muted">E. Malnatsky · IDC 2025 · Doctoral Consortium</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://doi.org/10.1145/3713043.3731660" target="_blank" rel="noopener noreferrer">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="E. Malnatsky (2025). Towards Dialogic Education through Child-Robot Interaction: A Hybrid Child-Centered Framework. Proceedings of IDC 2025, pp. 1214–1216. https://doi.org/10.1145/3713043.3731660">Cite</button>
+            </div>
+          </li>
+          <li data-year="2026">
+            <div>
+              <p class="pub-explain">Robot Bookworm raised a new question: what happens when a child and robot meet again after a year apart? Our follow-up found weaker connection and outdated or missing information in the robot’s memory. This paper introduces the Open-Memory Robots direction: giving children ways to see, question, and help update what a robot remembers.</p>
+              <p class="pub-title">Making Memories Together: Toward Transparent and Co-constructed Robot Memory in Child-Robot Interaction</p>
+              <p class="muted">E. Malnatsky, S. Wang, K. Hindriks, M. E. U. Ligthart · HRI 2026 · Companion</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://doi.org/10.1145/3776734.3794570" target="_blank" rel="noopener noreferrer">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="E. Malnatsky, S. Wang, K. Hindriks, M. E. U. Ligthart (2026). Making Memories Together: Toward Transparent and Co-constructed Robot Memory in Child-Robot Interaction. Companion Proceedings of HRI 2026, pp. 1125–1129. https://doi.org/10.1145/3776734.3794570">Cite</button>
+            </div>
+          </li>
+          <li data-year="2026">
+            <div>
+              <p class="pub-explain">This collaborative workshop paper proposes playful, rights-based ways for researchers to work with children—a methodological counterpart to the participatory design in Fitting Humor, Robot Bookworm, and our work on robot memory.</p>
+              <p class="pub-title">Roboticist’s Guide to Working with Children: A Playful by Design Workshop</p>
+              <p class="muted">L. M. Levinson, B. Cagiltay, V. Charisi, E. Malnatsky, M. E. U. Ligthart, M. Spitale · HRI 2026 · Workshop paper</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://doi.org/10.1145/3776734.3793849" target="_blank" rel="noopener noreferrer">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="L. M. Levinson, B. Cagiltay, V. Charisi, E. Malnatsky, M. E. U. Ligthart, M. Spitale (2026). Roboticist’s Guide to Working with Children: A Playful by Design Workshop. Companion Proceedings of HRI 2026, pp. 1420–1422. https://doi.org/10.1145/3776734.3793849">Cite</button>
+            </div>
+          </li>
+          <li data-year="2026">
+            <div>
+              <p class="pub-explain">While the HRI Bookworm paper examines the intervention’s effects, this paper looks at how we created its dialogue content. It evaluates our hybrid pipeline: educational scaffolding, offline language-model generation, automated validation, and human moderation, designed to balance personalization with safety and pedagogical quality.</p>
+              <p class="pub-title">A Hybrid Human-AI Content Generation Framework for Safe and Personalized Dialogic Learning with Children</p>
+              <p class="muted">E. Malnatsky, S. Wang, K. Sinha, K. V. Hindriks, M. E. U. Ligthart · AIED 2026 · Springer proceedings</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://doi.org/10.1007/978-3-032-29760-0_25" target="_blank" rel="noopener noreferrer">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="E. Malnatsky, S. Wang, K. Sinha, K. V. Hindriks, M. E. U. Ligthart (2026). A Hybrid Human-AI Content Generation Framework for Safe and Personalized Dialogic Learning with Children. Artificial Intelligence in Education, pp. 226–235 (Springer; conference 2026, bibliographic volume 2027). https://doi.org/10.1007/978-3-032-29760-0_25">Cite</button>
+            </div>
+          </li>
+          <li data-year="2026">
+            <div>
+              <p class="pub-explain">Building on DECRI and Robot Bookworm, this paper describes the interaction architecture across sessions: getting to know a child, using that knowledge to suggest a fitting book, and carrying it forward into reflective discussions. Where the AIED paper examines content generation, this one explains how personalization develops meaningfully over time.</p>
+              <p class="pub-title">From Getting Acquainted to Reflective Discussion: A Multi-Session Architecture for Dialogic Educational Child-Robot Interaction</p>
+              <p class="muted">E. Malnatsky, S. Wang, K. Sinha, K. V. Hindriks, M. E. U. Ligthart · IEEE RO-MAN 2026</p>
+            </div>
+            <div class="pub-btns">
+              <a class="btn btn--sm" href="https://ieeexplore.ieee.org/document/11714782" target="_blank" rel="noopener noreferrer">Paper</a>
+              <button class="btn btn--sm btn--light cite" data-cite="E. Malnatsky, S. Wang, K. Sinha, K. V. Hindriks, M. E. U. Ligthart (2026). From Getting Acquainted to Reflective Discussion: A Multi-Session Architecture for Dialogic Educational Child-Robot Interaction. 2026 IEEE 35th International Conference on Robot and Human Interactive Communication (RO-MAN).">Cite</button>
+            </div>
+          </li>
+
+        </ul>
+        <div class="buttons">
+          <a class="btn btn--light" href="https://research.vu.nl/en/persons/elena-malnatsky/" target="_blank" rel="noopener">See all on VU research portal</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+
+  <script>
+    /* Shareable project pages: /#research, /#reconnect, /#bookworm, /#humor. */
+    (() => {
+      const pages = new Set(['about','research','reconnect','bookworm','humor','projects','publications']);
+      function showPage(id, writeHash) {
+        if (!pages.has(id)) return;
+        document.body.dataset.selectedTab = id;
+        document.querySelectorAll('main > .page').forEach(page => {
+          const selected = page.id === id;
+          page.classList.toggle('is-on', selected);
+          page.classList.toggle('is-active', selected);
+          page.classList.toggle('active', selected);
+        });
+        document.querySelectorAll('.tabs .tab').forEach(tab => {
+          const selected = tab.dataset.tab === id;
+          tab.classList.toggle('is-on', selected);
+          tab.classList.toggle('is-active', selected);
+          tab.classList.toggle('active', selected);
+          tab.setAttribute('aria-current', selected ? 'page' : 'false');
+        });
+        if (writeHash && location.hash !== '#' + id) {
+          history.pushState(null, '', '#' + id);
+        }
+      }
+      function readHash() {
+        const key = decodeURIComponent(location.hash.substring(1));
+        showPage(pages.has(key) ? key : 'about', false);
+      }
+      document.addEventListener('click', event => {
+        const target = event.target.closest('[data-tab]');
+        if (target && pages.has(target.dataset.tab)) {
+          // Allow the site's existing tab handler to run, then synchronize the URL.
+          queueMicrotask(() => showPage(target.dataset.tab, true));
+        }
+      });
+      window.addEventListener('hashchange', readHash);
+      window.addEventListener('popstate', readHash);
+      document.addEventListener('DOMContentLoaded', readHash);
+      if (document.readyState !== 'loading') readHash();
+    })();
+  </script>
+
+</body>
+</html>
